@@ -98,7 +98,8 @@ const Home: NextPage = () => {
               ? sqrtInput.slice(1, -1)
               : sqrtInput
             })`
-          );
+          )
+          .replaceAll(",", "");
 
 
         const results = evaluate(newInput)
