@@ -1,16 +1,82 @@
-html,
-body {
-  padding: 0;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code&display=swap");
+
+:root,
+:root[data-theme="DARK"] {
+  --bg: #22252d;
+  --bg-alt: #2a2d37;
+  --bg-light-alt: #272b33;
+  --accent-light: #33eecd;
+  --accent-dark: #dd7f82;
+  --highlight: #ffffff;
+  --text-alt: #73757b;
+}
+
+:root[data-theme="LIGHT"] {
+  --bg: #ffffff;
+  --bg-alt: #f9f9f9;
+  --bg-light-alt: #f7f7f7;
+  --accent-light: #23fbd4;
+  --accent-dark: #f4aaaa;
+  --highlight: #22252d;
+  --text-alt: #e3e3e3;
+}
+
+body,
+html {
+  @apply flex items-center justify-center;
+  height: 100vh;
+  width: 100vw;
+  font-family: Fira Code, Roboto Mono, monospace;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  padding: 0;
+  background-color: var(--bg);
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.calculator {
+  background-color: var(--bg);
+  height: 100vh;
+  width: 100vw;
 }
 
-* {
-  box-sizing: border-box;
+.calculator-bottom {
+  background-color: var(--bg-alt);
+}
+
+.light {
+  color: var(--accent-light);
+}
+
+.dark {
+  color: var(--accent-dark);
+}
+
+.normal {
+  color: var(--highlight);
+}
+
+.key {
+  background-color: var(--bg-light-alt);
+}
+
+.theme-switcher {
+  background-color: var(--bg-alt);
+}
+
+
+.theme{
+    color: var(--text-alt);
+    transition: color 500ms ease-out;
+}
+
+
+.gray{
+    color: #4b4c54;
+}
+
+.blue{
+    color: #8990ff;
 }
